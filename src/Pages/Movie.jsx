@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Button from "../components/button/Button";
+import "./Movie.css";
 
 const API_URL = "https://ghibliapi.herokuapp.com/films";
 
@@ -21,8 +22,8 @@ function Movie() {
   }, []);
 
   return (
-    <div className="singleMovieContainer">
-      <img src={movie?.image} alt="/"></img>
+    <div className="container">
+      <img src={movie?.image} alt="/" className="movieImage"></img>
       <h1>{movie?.title}</h1>
       <h3>Director: {movie?.director}</h3>
       <h3>Release Date: {movie?.release_date}</h3>
