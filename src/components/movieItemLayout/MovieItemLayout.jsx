@@ -14,7 +14,7 @@ function MovieItemLayout({ movie }) {
       <div className="movieDescription">
         <h2>{movie.title}</h2>
         <p>{movie.description}</p>
-        <button key={movie.id} className="button">
+        <button key={movie.id} className="button" >
           SEE MORE
         </button>
       </div>

@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import MovieItem from "./components/movieItemLayout/MovieItemLayout";
 import "./App.css";
-import bgTotoro from "./assets/bgTotoro.png";
 
 const API_URL = "https://ghibliapi.herokuapp.com/films";
 
 function App() {
   const [movies, setMovies] = useState([]);
-  const [resultLimit, setResultLimit] = useState(5);
+  const resultLimit = 5;
 
   const allMovies = async () => {
     const response = await fetch(`${API_URL}`);
@@ -20,7 +19,9 @@ function App() {
     allMovies();
   }, []);
 
-  
+  // const handleClick = () => {
+  //   console.log("ive been clicked");
+  // };
 
   console.log(movies[0]);
   return (
