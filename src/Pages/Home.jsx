@@ -39,8 +39,6 @@ function Home() {
           <h3>....loading movies</h3>
         </div>
       )}
-
-      <div className="movieContainer"></div>
     </div>
   );
 }

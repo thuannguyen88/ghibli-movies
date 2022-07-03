@@ -22,10 +22,10 @@ function Movie() {
 
   return (
     <div className="singleMovieContainer">
-      <img src={movie.image} alt="/"></img>
-      <h1>{movie.title}</h1>
-      <h3>Director: {movie.director}</h3>
-      <h3>Release Date: {movie.release_date}</h3>
+      <img src={movie?.image} alt="/"></img>
+      <h1>{movie?.title}</h1>
+      <h3>Director: {movie?.director}</h3>
+      <h3>Release Date: {movie?.release_date}</h3>
       <Link to="/">
         <Button text={`BACK`} />
       </Link>

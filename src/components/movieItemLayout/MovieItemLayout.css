@@ -15,8 +15,6 @@
 }
 
 .movieImage {
-  /* object-fit: cover; */
-  /* height: 300px; */
   max-width: 200px;
   z-index: 10;
 }
