@@ -1,49 +1,18 @@
-import { useState, useEffect } from "react";
-import MovieItem from "./components/movieItemLayout/MovieItemLayout";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-
-const API_URL = "https://ghibliapi.herokuapp.com/films";
+import Home from "./Pages/Home";
+import Movie from "./Pages/Movie";
+import ErrorPage from "./Pages/ErrorPage";
 
 function App() {
-  const [movies, setMovies] = useState([]);
-  const resultLimit = 5;
-
-  const allMovies = async () => {
-    const response = await fetch(`${API_URL}`);
-    const data = await response.json();
-
-    setMovies(data);
-  };
-
-  useEffect(() => {
-    allMovies();
-  }, []);
-
-  // const handleClick = () => {
-  //   console.log("ive been clicked");
-  // };
-
-  console.log(movies[0]);
   return (
-    <div className="app">
-      <h1>GhibliMovies</h1>
-
-      {movies?.length > 0 ? (
-        <div className="movieContainer">
-          {movies.slice(0, resultLimit).map((movie) => (
-            <MovieItem movie={movie} key={movie.id} />
-          ))}
-        </div>
-      ) : (
-        <div className="loading">
-          <h3>....loading movies</h3>
-        </div>
-      )}
-
-      <div className="movieContainer">
-        {/* <MovieItem movies={movies[0]} /> */}
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie" element={<Movie />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </Router>
   );
 }
 
