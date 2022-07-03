@@ -33,13 +33,15 @@
   width: 45%;
 }
 
-.button {
+/* .button {
+  text-decoration: none;
+  color: yellow;
   width: 120px;
   padding: 10px 0px 10px;
   background: none;
   border-width: 2px 0px 2px 0px;
   cursor: pointer;
-}
+} */
 
 .bgTotoro {
   transform: rotateY(180deg);

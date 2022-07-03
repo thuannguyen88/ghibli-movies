@@ -1,6 +1,7 @@
 import React from "react";
 import bgWave from "../../assets/wave.svg";
 import bgTotoro from "../../assets/bgTotoro.png";
+import { Link } from "react-router-dom";
 import "./MovieItemLayout.css";
 
 function MovieItemLayout({ movie }) {
@@ -14,9 +15,9 @@ function MovieItemLayout({ movie }) {
       <div className="movieDescription">
         <h2>{movie.title}</h2>
         <p>{movie.description}</p>
-        <button key={movie.id} className="button" >
-          SEE MORE
-        </button>
+        <Link to={`/${movie.id}`}>
+          <button>SEE MORE</button>
+        </Link>
       </div>
       <img src={bgTotoro} alt="/" className="bgTotoro" />
     </div>

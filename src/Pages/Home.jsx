@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import MovieItem from "../components/movieItemLayout/MovieItemLayout";
 
+import "./Home.css";
+
 const API_URL = "https://ghibliapi.herokuapp.com/films";
 
 function Home() {
@@ -24,9 +26,13 @@ function Home() {
 
       {movies?.length > 0 ? (
         <div className="movieContainer">
-          {movies.slice(0, resultLimit).map((movie) => (
-            <MovieItem movie={movie} key={movie.id} />
-          ))}
+          {movies.slice(0, resultLimit).map((movie) => {
+            return (
+              <div key={movie.id}>
+                <MovieItem movie={movie} />
+              </div>
+            );
+          })}
         </div>
       ) : (
         <div className="loading">
