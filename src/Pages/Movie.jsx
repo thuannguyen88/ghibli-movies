@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import Button from "../components/button/Button";
 
 const API_URL = "https://ghibliapi.herokuapp.com/films";
 
@@ -26,7 +27,7 @@ function Movie() {
       <h3>Director: {movie.director}</h3>
       <h3>Release Date: {movie.release_date}</h3>
       <Link to="/">
-        <button>BACK</button>
+        <Button text={`BACK`} />
       </Link>
     </div>
   );
