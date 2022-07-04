@@ -9,17 +9,25 @@ function Movie() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState([]);
 
-  const singleMovie = async () => {
-    const response = await fetch(`${API_URL}`);
-    const data = await response.json();
-    const singleMovie = data.find((movies) => movies.id === movieId);
-    setMovie(singleMovie);
-    console.log(singleMovie);
-  };
+  // const singleMovie = async () => {
+  //   const response = await fetch(`${API_URL}`);
+  //   const data = await response.json();
+  //   const singleMovie = data.find((movies) => movies.id === movieId);
+  //   setMovie(singleMovie);
+  //   // console.log(singleMovie);
+  // };
 
   useEffect(() => {
+    const singleMovie = async () => {
+      const response = await fetch(`${API_URL}`);
+      const data = await response.json();
+      const singleMovie = data.find((movies) => movies.id === movieId);
+      setMovie(singleMovie);
+      // console.log(singleMovie);
+    };
+    
     singleMovie();
-  }, []);
+  }, [movieId]);
 
   return (
     <div className="container">
