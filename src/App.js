@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home.jsx";
-import Movie from "./pages/Movie.jsx";
-import ErrorPage from "./pages/ErrorPage.jsx";
+import Home from "./Pages/Home.jsx";
+import Movie from "./Pages/Movie.jsx";
+import ErrorPage from "./Pages/ErrorPage.jsx";
 
 function App() {
   return (
